@@ -1,6 +1,6 @@
 
-本地目录 /home/backup
-远程目录 gdrive:backup
+## 本地目录 /home/backup
+## 远程目录 gdrive:backup
 
 ## ▚ 复制备份：
 
