@@ -2,6 +2,20 @@
 ## 本地目录 /home/backup
 ## 远程目录 gdrive:backup
 
+多目录备份只需要重复命令即可
+
+## ▚ 手动复制备份（覆盖同名文件，远程不删除已删除文件）
+
+```
+/usr/local/bin/rclone copy /www/wwwroot gdrive:backup --progress
+```
+
+## ▚ 手动同步备份（覆盖同名文件，远程删除已删除文件）
+
+```
+/usr/local/bin/rclone sync /www/wwwroot gdrive:backup --progress
+```
+
 ## ▚ 复制备份：
 
 ```
@@ -55,7 +69,7 @@ cat <<EOF > /etc/systemd/system/auto_back.service
 Description=Auto Backup
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/rclone copy /www/wwwroot gdrive:backup --ignore-existing
+ExecStart=/usr/local/bin/rclone copy /www/wwwroot gdrive:backup --progress
 User=root
 EOF
 ```
@@ -91,4 +105,14 @@ systemctl enable auto_back.timer && systemctl start auto_back.timer
 
 ```
 
+## ▚ 完全卸载
 
+```
+rm -rf /etc/systemd/system/auto_back.service
+rm -rf /etc/systemd/system/auto_back.timer
+
+rm -rf /usr/local/bin/rclone
+
+rm -rf /root/.cache/rclone
+rm -rf /root/.config/rclone
+```
