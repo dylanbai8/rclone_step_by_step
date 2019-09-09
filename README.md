@@ -145,6 +145,11 @@ admin 123456
 ```
 rm -rf /etc/systemd/system/rclone.service
 rm -rf /usr/local/bin/rclone
+
+rm -rf /root/.cache/rclone
+rm -rf /root/.config/rclone
+
+rm -rf /google
 ```
 
 ## ▚ 卸载 cloud-torrent
@@ -152,6 +157,7 @@ rm -rf /usr/local/bin/rclone
 ```
 rm -rf /etc/systemd/system/cloud-torrent.service
 rm -rf /usr/local/bin/cloud-torrent
+
 rm -rf /usr/local/bin/cloud-torrent.json
 ```
 
