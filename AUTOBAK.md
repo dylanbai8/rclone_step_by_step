@@ -67,7 +67,7 @@ touch /etc/systemd/system/auto_back.timer
 
 cat <<EOF > /etc/systemd/system/auto_back.timer
 [Unit]
-Description=Daily sync local files to google drive
+Description=Auto Backup
 [Timer]
 OnBootSec=5min
 OnUnitActiveSec=1d
@@ -78,11 +78,11 @@ WantedBy=multi-user.target
 EOF
 ```
 
-OnBootSec表示开机后五分钟后启动
+OnBootSec 表示开机后五分钟后启动
 
-OnUnitActiveSec表示每隔1天执行一次
+OnUnitActiveSec 表示每隔1天执行一次
 
-TimeoutStartSec表示脚本执行后1小时后检查结果，防止备份时间过长，脚本认为没有响应，认为任务失败而中断任务
+TimeoutStartSec 表示脚本执行后1小时后检查结果，防止备份时间过长，脚本认为没有响应，认为任务失败而中断任务
 
 ## ▚ 启用定时器并加入开机启动
 
