@@ -37,10 +37,10 @@ rclone config
 .....
 
 6.是否编辑高级配置 选择n （Edit advanced config）
-7.是否为团队版网盘 选择n （Configure this as a team drive）
-8.是否自动完成配置 选择n （Say N if you are working on a remote or headless machine or Y didn't work）
-9.按照提示，在浏览器中打开url获取token。完成配置。
+7.是否自动完成配置 选择n （Say N if you are working on a remote or headless machine or Y didn't work）
+8.按照提示，在浏览器中打开url获取token。完成配置。
 
+9.是否为团队版网盘 选择n （Configure this as a team drive）
 10.完成配置 选择y （Yes this is OK）
 11.退出 选择q
 ```
@@ -101,7 +101,7 @@ touch /etc/systemd/system/cloud-torrent.service
 
 cat <<EOF > /etc/systemd/system/cloud-torrent.service
 [Unit]
-Description=Rclone_Server
+Description=Cloud-torrent_Server
 After=network.target
 Wants=network.target
 [Service]
