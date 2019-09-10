@@ -23,5 +23,5 @@ mysqldump -uroot -p123qwe --events --ignore-table=mysql.events --all-databases >
 ## 可选：戳个日期
 
 ```
-touch /www/wwwroot/backup_`date +%F`.txt
+echo "backup_`date +%F`" > /www/wwwroot/backup_`date +%F`.txt
 ```
