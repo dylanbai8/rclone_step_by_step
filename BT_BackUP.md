@@ -16,7 +16,7 @@
 
 ```
 
-mysqldump -uroot -pQq130130 --events --ignore-table=mysql.events --all-databases > /www/wwwroot/mysite.sql
+mysqldump -uroot -p123qwe --events --ignore-table=mysql.events --all-databases > /www/wwwroot/mysite.sql
 
 /usr/local/bin/rclone sync /www/wwwroot odrive:backup --progress
 
