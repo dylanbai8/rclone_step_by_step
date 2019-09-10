@@ -15,9 +15,13 @@
 ## 3.宝塔添加定时任务
 
 ```
-
 mysqldump -uroot -p123qwe --events --ignore-table=mysql.events --all-databases > /www/wwwroot/mysite.sql
 
 /usr/local/bin/rclone sync /www/wwwroot odrive:backup --progress
+```
 
+## 可选：戳个日期
+
+```
+touch /www/wwwroot/backup_`date +%F`.txt
 ```
