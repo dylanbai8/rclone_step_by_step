@@ -25,3 +25,12 @@ mysqldump -uroot -p123qwe --events --ignore-table=mysql.events --all-databases >
 ```
 echo "backup_`date +%F`" > /www/wwwroot/backup_`date +%F`.txt
 ```
+
+## 特例
+
+```
+mysqldump -uroot -pQq130130 --events --ignore-table=mysql.events --all-databases > /www/wwwroot/mysite.sql
+echo "backup_`date +%F`" > /www/wwwroot/backup_`date +%F`.txt
+/usr/local/bin/rclone sync /www/wwwroot odrive:backup --progress
+rm -rf /www/wwwroot/backup_`date -d yesterday +%F`.txt
+```
